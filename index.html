@@ -1,12 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>D&D Monsters</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>D&D Monsters</title>
+  </head>
+  <body>
+    <div class="main-wrapper">
+      <header>
+        <h1>Search for D&D Monster</h1>
+        <input
+          type="text"
+          id="search"
+          autocomplete="off"
+          placeholder="Enter the CR"
+        />
+      </header>
+      <main>
+        <div class="monster">
+          <div class="name-wrapper">
+            <h2 class="name"></h2>
+            <h3 class="alignment"></h3>
+          </div>
+          <div class="stats-wrapper">
+            <div class="ability-scores">
+              <p></p>
+              <p></p>
+              <p></p>
+              <p></p>
+              <p></p>
+              <p></p>
+            </div>
+            <div class="main-stats">
+              <p class="main-stat"></p>
+              <p class="main-stat"></p>
+              <p class="main-stat"></p>
+            </div>
+            <div class="secondary">
+              <p class="secondary-stats"></p>
+              <p class="secondary-stats"></p>
+              <p class="secondary-stats"></p>
+              <p class="secondary-stats"></p>
+              <p class="secondary-stats"></p>
+            </div>
+            <div class="actions-wrapper">
+              <h4>Actions</h4>
+              <div class="actions">
+                <p class="actions-action"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="app.js"></script>
+  </body>
 </html>
