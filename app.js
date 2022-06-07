@@ -25,13 +25,26 @@ search.addEventListener('keypress', async (e) => {
   };
 });
 
+const createSpeedDiv = (speedObject) => {
+
+  let speedDiv = document.createElement('div');
+  speedDiv.classList.add('monster-card__speed');
+  let speedList = "";
+  for (const [key, value] of Object.entries(speedObject)) {  
+    speedList += `<p>${key}: ${value}</p>`;
+  }
+  return speedList;
+}
+
 let monsterGenerator = (monster) => {
 
   let monsterList = monster.results;
   monsterList.forEach(e => {
-    console.log("monster list", e);
     let monsterDiv = document.createElement('div');
     monsterDiv.classList.add('monster-card');
+    const monsterSpeed = e.speed;
+    console.log(monsterSpeed);
+    monsterSpeedValues = Object.entries(monsterSpeed);
     monsterDiv.innerHTML = `
     <div class="monster-card__primary">
       <div class="monster-card__name">Name: ${e.name}</div>
@@ -52,7 +65,7 @@ let monsterGenerator = (monster) => {
       <div class="monster-card__cha">CHA: ${e.charisma}</div>
     </div>
     <div class="monster-card__extra">
-      <div class="monster-card__challenge-rating">CR: ${e.challenge_rating}</div>
+      <div class="monster-card__speed">Speed: ${createSpeedDiv(monsterSpeed)}    </div> 
       <div class="monster-card__languages">Languages: ${e.languages}</div>
     </div>
   `;
