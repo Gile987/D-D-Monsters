@@ -30,7 +30,7 @@ const createSpeedDiv = (speedObject) => {
   let speedDiv = document.createElement('div');
   speedDiv.classList.add('monster-card__speed');
   let speedList = "";
-  for (const [key, value] of Object.entries(speedObject)) {  
+  for (const [key, value] of Object.entries(speedObject)) {
     speedList += `<p>${key}: ${value}</p>`;
   };
   return speedList;
@@ -50,11 +50,6 @@ let monsterGenerator = (monster) => {
       <div class="monster-card__type">Type: ${e.type}</div>
       <div class="monster-card__size">Size: ${e.size}</div>
     </div>
-    <div class="monster-card__secondary">
-      <div class="monster-card__alignment">Alignment: ${e.alignment}</div>
-      <div class="monster-card__armor-class">Armor Class: ${e.armor_class}</div>
-      <div class="monster-card__hit-points">Hit Points: ${e.hit_points}</div>
-    </div>
     <div class="monster-card__ability">
       <div class="monster-card__str">STR: ${e.strength}</div>
       <div class="monster-card__dex">DEX: ${e.dexterity}</div>
@@ -62,6 +57,11 @@ let monsterGenerator = (monster) => {
       <div class="monster-card__int">INT: ${e.intelligence}</div>
       <div class="monster-card__wis">WIS: ${e.wisdom}</div>
       <div class="monster-card__cha">CHA: ${e.charisma}</div>
+    </div>
+    <div class="monster-card__secondary">
+      <div class="monster-card__alignment">Alignment: ${e.alignment}</div>
+      <div class="monster-card__armor-class">Armor Class: ${e.armor_class}</div>
+      <div class="monster-card__hit-points">Hit Points: ${e.hit_points}</div>
     </div>
     <div class="monster-card__extra">
       <div class="monster-card__speed">Speed: ${createSpeedDiv(monsterSpeed)}</div> 

@@ -63,6 +63,9 @@ main {
   background-color:rgb(99, 146, 234);
 }
 
+
+/* monster cards */
+
 .monster-card {
   display: flex;
   flex-direction: column;
@@ -74,6 +77,37 @@ main {
   border-radius: 0.5rem;
   background-color: #fff;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
-  width: 70%;
+  width: 80%;
   text-transform: capitalize;
+  background-color: rgb(100, 167, 170);
+}
+
+.monster-card__primary {
+  width: 100%;
+  background-color: rgb(225, 226, 201);
+  padding: 0.4rem 0;
+}
+
+.monster-card__secondary {
+  width: 100%;
+  background-color: rgb(165, 226, 201);
+  padding: 0.4rem 0;
+}
+
+.monster-card__ability {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0.4rem 0;
+  width: 100%;
+  background-color: rgb(200, 226, 201);
+}
+
+.monster-card__ability div {
+  padding: 0 0.4rem;
+}
+
+.monster-card__extra {
+  width: 100%;
+  background-color: rgb(125, 226, 201);
 }
