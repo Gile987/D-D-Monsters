@@ -17,7 +17,7 @@ search.addEventListener('keypress', async (e) => {
         const monster = await getMonster();
         displayMonster(monster);
       } else {
-        alert('Please enter a challenge rating');
+        alert('Please enter a challenge rating number');
       }
     } catch (error) {
       console.log('error ', error);
@@ -33,20 +33,28 @@ let monsterGenerator = (monster) => {
     let monsterDiv = document.createElement('div');
     monsterDiv.classList.add('monster-card');
     monsterDiv.innerHTML = `
-    <div class="monster-card__name">Name: ${e.name}</div>
-    <div class="monster-card__type">Type: ${e.type}</div>
-    <div class="monster-card__size">Size: ${e.size}</div>
-    <div class="monster-card__alignment">Alignment: ${e.alignment}</div>
-    <div class="monster-card__armor-class">Armor Class: ${e.armor_class}</div>
-    <div class="monster-card__hit-points">Hit Points: ${e.hit_points}</div>
-    <div class="monster-card__str">STR: ${e.strength}</div>
-    <div class="monster-card__dex">DEX: ${e.dexterity}</div>
-    <div class="monster-card__con">CON: ${e.constitution}</div>
-    <div class="monster-card__int">INT: ${e.intelligence}</div>
-    <div class="monster-card__wis">WIS: ${e.wisdom}</div>
-    <div class="monster-card__cha">CHA: ${e.charisma}</div>
-    <div class="monster-card__challenge-rating">CR: ${e.challenge_rating}</div>
-    <div class="monster-card__languages">${e.languages}</div>
+    <div class="monster-card__primary">
+      <div class="monster-card__name">Name: ${e.name}</div>
+      <div class="monster-card__type">Type: ${e.type}</div>
+      <div class="monster-card__size">Size: ${e.size}</div>
+    </div>
+    <div class="monster-card__secondary">
+      <div class="monster-card__alignment">Alignment: ${e.alignment}</div>
+      <div class="monster-card__armor-class">Armor Class: ${e.armor_class}</div>
+      <div class="monster-card__hit-points">Hit Points: ${e.hit_points}</div>
+    </div>
+    <div class="monster-card__ability">
+      <div class="monster-card__str">STR: ${e.strength}</div>
+      <div class="monster-card__dex">DEX: ${e.dexterity}</div>
+      <div class="monster-card__con">CON: ${e.constitution}</div>
+      <div class="monster-card__int">INT: ${e.intelligence}</div>
+      <div class="monster-card__wis">WIS: ${e.wisdom}</div>
+      <div class="monster-card__cha">CHA: ${e.charisma}</div>
+    </div>
+    <div class="monster-card__extra">
+      <div class="monster-card__challenge-rating">CR: ${e.challenge_rating}</div>
+      <div class="monster-card__languages">Languages: ${e.languages}</div>
+    </div>
   `;
     monsterContainer.appendChild(monsterDiv);
   });
