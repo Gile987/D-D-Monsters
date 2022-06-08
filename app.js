@@ -38,7 +38,6 @@ const monsterGenerator = (monster) => {
     monsterDiv.classList.add('monster-card');
     const monsterSpeed = e.speed;
     monsterSpeedValues = Object.entries(monsterSpeed);
-    // inner html je unsafe, koristi inner text i pravi ruchno dom elemente
     monsterDiv.innerHTML = `
     <div class="monster-card__primary">
       <div class="monster-card__name">Name: ${e.name}</div>
