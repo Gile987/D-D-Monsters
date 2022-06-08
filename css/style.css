@@ -41,6 +41,14 @@ header {
   font-size: 1rem;
 }
 
+.warning {
+  color:#ff0000;
+  display: none;
+}
+
+.visible {
+  display: inline-block;
+}
 
 /* main */
 
@@ -110,4 +118,9 @@ main {
 .monster-card__extra {
   width: 100%;
   background-color: rgb(125, 226, 201);
+}
+
+.monster-card__speed {
+  display: flex;
+  justify-content: center;
 }

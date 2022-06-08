@@ -1,5 +1,6 @@
 const search = document.querySelector('#search');
 const monsterContainer = document.querySelector('.monster');
+const warning = document.querySelector('.warning');
 
 async function getMonster() {
 
@@ -16,8 +17,9 @@ search.addEventListener('keypress', async (e) => {
       if (search.value && !isNaN(search.value)) {
         const monster = await getMonster();
         displayMonster(monster);
+        warning.classList.remove('visible');
       } else {
-        alert('Please enter a challenge rating number');
+        warning.classList.add('visible');
       }
     } catch (error) {
       console.log('error ', error);
@@ -29,7 +31,7 @@ const createSpeedDiv = (speedObject) => {
 
   let speedList = "";
   for (const [key, value] of Object.entries(speedObject)) {
-    speedList += `<p>${key}: ${value}</p>`;
+    speedList += `<p>&nbsp;${key}: ${value}&nbsp;</p>`;
   };
   return speedList;
 };
