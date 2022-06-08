@@ -27,8 +27,6 @@ search.addEventListener('keypress', async (e) => {
 
 const createSpeedDiv = (speedObject) => {
 
-  let speedDiv = document.createElement('div');
-  speedDiv.classList.add('monster-card__speed');
   let speedList = "";
   for (const [key, value] of Object.entries(speedObject)) {
     speedList += `<p>${key}: ${value}</p>`;
