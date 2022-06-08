@@ -2,13 +2,14 @@ const search = document.querySelector('#search');
 const monsterContainer = document.querySelector('.monster');
 const warning = document.querySelector('.warning');
 
-async function getMonster() {
+const getMonster = async () => {
 
-  const query = search.value;
-  const response = await fetch(`https://api.open5e.com/monsters/?challenge_rating=${query}`);
+  const { value } = search;
+  const response = await fetch(`https://api.open5e.com/monsters/?challenge_rating=${value}`);
   const data = await response.json();
   return data;
 };
+
 
 search.addEventListener('keypress', async (e) => {
 
@@ -28,7 +29,7 @@ search.addEventListener('keypress', async (e) => {
 });
 
 const createSpeedDiv = (speedObject) => {
-
+  // izbacio bi speedlist i uradio sa reduce ili map
   let speedList = "";
   for (const [key, value] of Object.entries(speedObject)) {
     speedList += `<p>&nbsp;${key}: ${value}&nbsp;</p>`;
@@ -36,7 +37,7 @@ const createSpeedDiv = (speedObject) => {
   return speedList;
 };
 
-let monsterGenerator = (monster) => {
+const monsterGenerator = (monster) => {
 
   let monsterList = monster.results;
   monsterList.forEach(e => {
@@ -44,6 +45,7 @@ let monsterGenerator = (monster) => {
     monsterDiv.classList.add('monster-card');
     const monsterSpeed = e.speed;
     monsterSpeedValues = Object.entries(monsterSpeed);
+    // inner html je unsafe, koristi inner text i pravi ruchno dom elemente
     monsterDiv.innerHTML = `
     <div class="monster-card__primary">
       <div class="monster-card__name">Name: ${e.name}</div>
@@ -72,7 +74,7 @@ let monsterGenerator = (monster) => {
   });
 };
 
-let displayMonster = (monster) => {
+const displayMonster = (monster) => {
 
   if (monsterContainer.innerHTML === "") {
     monsterGenerator(monster);
