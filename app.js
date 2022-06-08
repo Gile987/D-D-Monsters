@@ -10,7 +10,6 @@ const getMonster = async () => {
   return data;
 };
 
-
 search.addEventListener('keypress', async (e) => {
 
   if (e.key === 'Enter') {

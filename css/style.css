@@ -22,6 +22,10 @@ body {
   color: #cec2ae;
   line-height: 1.5;
   background-color:#4a2932;
+  background-image: url(../bg.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 header {
@@ -31,6 +35,8 @@ header {
   align-items: center;
   text-align: center;
   padding: 2.5rem 0;
+  position: sticky; top: 0;
+  background-color: #a34c50;
 }
 
 #search {
@@ -53,9 +59,6 @@ header {
 
 /* main */
 
-.main-wrapper {
-  background-color:#a34c50;
-}
 
 .monster {
   display: flex;
@@ -69,7 +72,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color:#4a2932;;
+
 }
 
 
@@ -87,7 +90,7 @@ main {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
   width: 80%;
   text-transform: capitalize;
-  background-color: #264c5e;
+  background-color: rgb(38, 76, 94, 0.75);
 }
 
 .monster-card__primary {
