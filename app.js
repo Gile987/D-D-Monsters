@@ -28,14 +28,7 @@ search.addEventListener('keypress', async (e) => {
   };
 });
 
-const createSpeedDiv = (speedObject) => {
-  // izbacio bi speedlist i uradio sa reduce ili map
-  let speedList = "";
-  for (const [key, value] of Object.entries(speedObject)) {
-    speedList += `<p>&nbsp;${key}: ${value}&nbsp;</p>`;
-  };
-  return speedList;
-};
+const createSpeedDiv = (speedObject = {}) => Object.entries(speedObject).map(([key, value]) => `<p>&nbsp;${key}: ${value}&nbsp;</p>`).join('');
 
 const monsterGenerator = (monster) => {
 
