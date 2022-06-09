@@ -7,6 +7,7 @@ const getMonster = async () => {
   const { value } = search;
   const response = await fetch(`https://api.open5e.com/monsters/?challenge_rating=${value}`);
   const data = await response.json();
+
   return data;
 };
 
@@ -36,7 +37,6 @@ const monsterGenerator = (monster) => {
     let monsterDiv = document.createElement('div');
     monsterDiv.classList.add('monster-card');
     const monsterSpeed = e.speed;
-    monsterSpeedValues = Object.entries(monsterSpeed);
     monsterDiv.innerHTML = `
     <div class="monster-card__primary">
       <div class="monster-card__name">Name: ${e.name}</div>

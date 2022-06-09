@@ -86,7 +86,8 @@ main {
   text-align: center;
   padding: 1rem;
   margin: 0.5rem;
-  border-radius: 0.5rem;
+  border: 3px solid #333333;
+  border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
   width: 80%;
   text-transform: capitalize;
